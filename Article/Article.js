@@ -85,7 +85,16 @@ const data = [
     thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
           Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
-  }
+  },
+  {
+  title: ' Happy Birthday HOV!',
+  date: 'Dec 04, 2019',
+  firstParagraph: `JAYZ.The GOAT. Best rapper all times. all that stuff. blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah. More JAYZ! `,
+
+  secondParagraph: `He's old. He is 50 today. Thats like ym dads age. Still the GOAT though. These new kids stink. Get off my lawn! blahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblah `,
+
+  thirdParagraph: `ALso he is married to BEyonce. And has kids with her. Most win of all wins. No seeins this man. Happy Birthday to the old guy in the club. blahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblah`
+}
 ];
 
 /* Step 1: Create a function that creates a component. You will want your component to look like the template below: 
@@ -134,15 +143,13 @@ function createComponent (title, date, firstParagraph, secondParagraph, thirdPar
   
   //add classes date &  expandButton
   
-
-  //append article div to "articles"
   articleDiv.appendChild(articleTitle);
   articleDiv.appendChild(articleDate);
   articleDiv.appendChild(firstP);
   articleDiv.appendChild(secondP);
   articleDiv.appendChild(thirdP);
-  //articleDiv.appendChild(button);
-
+  articleDiv.appendChild(button);
+  
   //append h2,date,p's,button to article. 
 
 
@@ -151,12 +158,13 @@ function createComponent (title, date, firstParagraph, secondParagraph, thirdPar
   firstP.textContent = firstParagraph;
   secondP.textContent = secondParagraph;
   thirdP.textContent = thirdParagraph;
+  button.textContent = '\u25bc';
   //add content
  
 
-//button.addEventLister('click', event => {
-  //articleDiv.classList.toggle('article-open');
-
+button.addEventListener('click', event => {
+  articleDiv.classList.toggle('article-open');
+})
   //event
 return articleDiv;
 
