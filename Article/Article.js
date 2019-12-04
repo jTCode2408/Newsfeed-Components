@@ -117,22 +117,54 @@ const data = [
 
 function createComponent (title, date, firstParagraph, secondParagraph, thirdParagraph) {
 
-  const articleTitle = document.createElement('h2')//article title div
-  const articledate = document.createElement('p')//date class div
-  const p1 = document.createElement('p')//first paragraph
-  const p2 = document.createElement('p')//second paragraph
-  const p3 = document.createElement('p')//second paragraph
-  const button = document.createElement('button')//button
+  const articleDiv = document.createElement('div'); //main parent div
+  const articleTitle = document.createElement('h2');//article title div
+  const articleDate = document.createElement('p');//date class div
+  const firstP = document.createElement('p');//first paragraph
+  const secondP = document.createElement('p');//second paragraph
+  const thirdP = document.createElement('p');//second paragraph
+  const button = document.createElement('span');//button
+
+  articleDiv.classList.add('article')
+  articleDate.classList.add ('date');
+  firstP.classList.add('paragraphOne');
+  secondP.classList.add('paragraphTwo');
+  thirdP.classList.add('paragraphThree');
+   button.classList.add ('expandButton');
+  
+  //add classes date &  expandButton
+  
+
+  //append article div to "articles"
+  articleDiv.appendChild(articleTitle);
+  articleDiv.appendChild(articleDate);
+  articleDiv.appendChild(firstP);
+  articleDiv.appendChild(secondP);
+  articleDiv.appendChild(thirdP);
+  //articleDiv.appendChild(button);
+
+  //append h2,date,p's,button to article. 
 
 
+  articleTitle.textContent = title;
+  articleDate.textContent = date;
+  firstP.textContent = firstParagraph;
+  secondP.textContent = secondParagraph;
+  thirdP.textContent = thirdParagraph;
+  //add content
+ 
 
+//button.addEventLister('click', event => {
+  //articleDiv.classList.toggle('article-open');
 
-
-
-
-
-
-
-
+  //event
+return articleDiv;
 
 }
+
+
+const articles = document.querySelector('.articles');
+
+data.forEach( info => {
+articles.appendChild(createComponent(info.title, info.date, info.firstParagraph, info.secondParagraph, info.thirdParagraph ))
+})
