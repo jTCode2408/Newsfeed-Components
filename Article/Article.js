@@ -133,6 +133,7 @@ function createComponent (title, date, firstParagraph, secondParagraph, thirdPar
   const secondP = document.createElement('p');//second paragraph
   const thirdP = document.createElement('p');//second paragraph
   const button = document.createElement('span');//button
+  const closeButton = document.createElement('button'); //stetch button
 
   articleDiv.classList.add('article')
   articleDate.classList.add ('date');
@@ -140,6 +141,7 @@ function createComponent (title, date, firstParagraph, secondParagraph, thirdPar
   secondP.classList.add('paragraphTwo');
   thirdP.classList.add('paragraphThree');
    button.classList.add ('expandButton');
+   closeButton.classList.add ('closeButton')
   
   //add classes date &  expandButton
   
@@ -149,6 +151,7 @@ function createComponent (title, date, firstParagraph, secondParagraph, thirdPar
   articleDiv.appendChild(secondP);
   articleDiv.appendChild(thirdP);
   articleDiv.appendChild(button);
+  articleDiv.appendChild(closeButton); //stretch button
   
   //append h2,date,p's,button to article. 
 
@@ -159,13 +162,22 @@ function createComponent (title, date, firstParagraph, secondParagraph, thirdPar
   secondP.textContent = secondParagraph;
   thirdP.textContent = thirdParagraph;
   button.textContent = '\u25bc';
+  closeButton.textContent = 'close';
   //add content
  
 
 button.addEventListener('click', event => {
   articleDiv.classList.toggle('article-open');
+}) //event
+
+closeButton.addEventListener ('click', event =>{
+  articleDiv.style.display = 'none';
+
 })
-  //event
+  // stretch event
+  
+
+
 return articleDiv;
 
 }
@@ -174,5 +186,8 @@ return articleDiv;
 const articles = document.querySelector('.articles');
 
 data.forEach( info => {
-articles.appendChild(createComponent(info.title, info.date, info.firstParagraph, info.secondParagraph, info.thirdParagraph ))
+articles.appendChild(createComponent(info.title, info.date, info.firstParagraph, info.secondParagraph, info.thirdParagraph))
 })
+
+
+
