@@ -85,7 +85,16 @@ const data = [
     thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
           Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
-  }
+  },
+  {
+  title: ' Happy Birthday HOV!',
+  date: 'Dec 04, 2019',
+  firstParagraph: `JAYZ.The GOAT. Best rapper all times. all that stuff. blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah. More JAYZ! `,
+
+  secondParagraph: `He's old. He is 50 today. Thats like ym dads age. Still the GOAT though. These new kids stink. Get off my lawn! blahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblah `,
+
+  thirdParagraph: `ALso he is married to BEyonce. And has kids with her. Most win of all wins. No seeins this man. Happy Birthday to the old guy in the club. blahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblahblah`
+}
 ];
 
 /* Step 1: Create a function that creates a component. You will want your component to look like the template below: 
@@ -98,6 +107,8 @@ const data = [
 
     <span class='expandButton'></span>
   </div>
+
+  
 
   Hint: You will need to use createElement more than once here!
 
@@ -112,3 +123,71 @@ const data = [
   Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new article.
 
 */
+
+function createComponent (title, date, firstParagraph, secondParagraph, thirdParagraph) {
+
+  const articleDiv = document.createElement('div'); //main parent div
+  const articleTitle = document.createElement('h2');//article title div
+  const articleDate = document.createElement('p');//date class div
+  const firstP = document.createElement('p');//first paragraph
+  const secondP = document.createElement('p');//second paragraph
+  const thirdP = document.createElement('p');//second paragraph
+  const button = document.createElement('span');//button
+  const closeButton = document.createElement('button'); //stetch button
+
+  articleDiv.classList.add('article')
+  articleDate.classList.add ('date');
+  firstP.classList.add('paragraphOne');
+  secondP.classList.add('paragraphTwo');
+  thirdP.classList.add('paragraphThree');
+   button.classList.add ('expandButton');
+   closeButton.classList.add ('closeButton')
+  
+  //add classes date &  expandButton
+  
+  articleDiv.appendChild(articleTitle);
+  articleDiv.appendChild(articleDate);
+  articleDiv.appendChild(firstP);
+  articleDiv.appendChild(secondP);
+  articleDiv.appendChild(thirdP);
+  articleDiv.appendChild(button);
+  articleDiv.appendChild(closeButton); //stretch button
+  
+  //append h2,date,p's,button to article. 
+
+
+  articleTitle.textContent = title;
+  articleDate.textContent = date;
+  firstP.textContent = firstParagraph;
+  secondP.textContent = secondParagraph;
+  thirdP.textContent = thirdParagraph;
+  button.textContent = '\u25bc';
+  closeButton.textContent = 'close';
+  //add content
+ 
+
+button.addEventListener('click', event => {
+  articleDiv.classList.toggle('article-open');
+}) //event
+
+closeButton.addEventListener ('click', event =>{
+  articleDiv.style.display = 'none';
+
+})
+  // stretch event
+  
+
+
+return articleDiv;
+
+}
+
+
+const articles = document.querySelector('.articles');
+
+data.forEach( info => {
+articles.appendChild(createComponent(info.title, info.date, info.firstParagraph, info.secondParagraph, info.thirdParagraph))
+})
+
+
+
