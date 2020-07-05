@@ -17,12 +17,52 @@
   font-weight: 700;
   src: local('Roboto Bold'), local('Roboto-Bold'), url(https://fonts.gstatic.com/s/roboto/v20/KFOlCnqEu92Fr1MmWUlfBBc9.ttf) format('truetype');
 }
-/* Below this line is where you will start your work */
-/* It is important to note, you will not be writing any CSS in this file*/
+@font-face {
+  font-family: 'Cabin Sketch';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: local('Cabin Sketch Bold'), local('CabinSketch-Bold'), url(https://fonts.gstatic.com/s/cabinsketch/v13/QGY2z_kZZAGCONcK2A4bGOj0I_1o4Q.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Cinzel Decorative';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: local('Cinzel Decorative Bold'), local('CinzelDecorative-Bold'), url(https://fonts.gstatic.com/s/cinzeldecorative/v8/daaHSScvJGqLYhG8nNt8KPPswUAPniZoaelD.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Faster One';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Faster One'), local('FasterOne-Regular'), url(https://fonts.gstatic.com/s/fasterone/v11/H4ciBXCHmdfClFb-vWhfyLs.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Milonga';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Milonga'), local('Milonga-Regular'), url(https://fonts.gstatic.com/s/milonga/v7/SZc53FHnIaK9W5kffz0.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Tinos';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Tinos Italic'), local('Tinos-Italic'), url(https://fonts.gstatic.com/s/tinos/v13/buE2poGnedXvwjX-fmE.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'UnifrakturCook';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: local('UnifrakturCook'), local('UnifrakturCook-Bold'), url(https://fonts.gstatic.com/s/unifrakturcook/v11/IurA6Yli8YOdcoky-0PTTdkm56n05Uw1.ttf) format('truetype');
+}
 .header {
   width: 100%;
   height: 75px;
-  background-color: #388E3C;
+  background-color: #555252;
   color: white;
   display: flex;
   justify-content: center;
@@ -33,7 +73,8 @@
 }
 .header h1 {
   margin: 0;
-  font-size: 48px;
+  font-size: 58px;
+  font-family: 'UnifrakturCook', cursive;
 }
 .articles {
   margin-top: 95px;
@@ -47,16 +88,19 @@
   position: relative;
   height: 50px;
   overflow: hidden;
-  box-shadow: 2px 2px 2px lightgrey;
+  box-shadow: 2px 2px 2px black;
+  font-family: 'Tinos', serif;
 }
 .article h2 {
-  font-size: 28px;
+  font-size: 30px;
   padding: 0;
   margin: 15px 0 0;
+  font-family: 'Milonga', cursive;
 }
 .article .date {
   margin: 0;
-  font-size: 14px;
+  font-size: 18px;
+  font-family: 'Faster One', cursive;
 }
 .article .close {
   position: absolute;
@@ -67,8 +111,8 @@
   position: absolute;
   bottom: 0;
   left: 50%;
-  font-size: 12px;
-  color: grey;
+  font-size: 20px;
+  color: black;
   cursor: pointer;
   transform: translate(-50%);
   background-color: white;
@@ -89,7 +133,7 @@
   width: 350px;
   height: 100vh;
   /* This give the height 100% of the screen or, '100% of View Height' */
-  background-color: #81C784;
+  background-color: #555252;
   border: 1px solid #004D40;
   border-left: none;
   border-bottom: none;
@@ -110,5 +154,8 @@ body {
   margin: 0;
   padding: 0;
   font-family: 'Roboto';
-  background-color: #fffef7;
+  background-image: url('../assets/paper2.jpg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
